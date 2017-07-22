@@ -52,7 +52,7 @@ public enum Token
 	 * <li>Open Parenthesis "("</li>
 	 * <li>Open Square Bracket "["</li>
 	 * <li>Open Curly Brace "{"</li>
-	 * <li>Open Angle Bracket "<"</li>
+	 * <li>Open Angle Bracket "&lt;"</li>
 	 * </ul>
 	 */
 	OPEN ( "[({\\[<]", false, false, -1, false ),
@@ -64,7 +64,7 @@ public enum Token
 	 * <li>Close Parenthesis ")"</li>
 	 * <li>Close Square Bracket "]"</li>
 	 * <li>Close Curly Brace "}"</li>
-	 * <li>Close Angle Bracket ">"</li>
+	 * <li>Close Angle Bracket "&gt;"</li>
 	 * </ul>
 	 */
 	CLOSE ( "[)}\\]>]", false, false, -1, false ),
@@ -178,7 +178,7 @@ public enum Token
 	}
 	
 	/**
-	 * Returns this Token's Regular Expression
+	 * @return Returns this Token's Regular Expression
 	 */
 	public final String regex()
 	{

@@ -15,6 +15,9 @@ public class CircleBuilder
 	 */
 	public static Circle outscribedCircle ( Point a, Point b )
 	{
+		if ( a == null || b == null )
+			throw new NullPointerException ( "Neither point can be null" );
+		
 		Point center = PointBuilder.midpoint ( a, b );
 		double radius = center.distanceTo ( a );
 		
@@ -31,6 +34,9 @@ public class CircleBuilder
 	 */
 	public static Circle outscribedCircle ( Point a, Point b, Point c )
 	{
+		if ( a == null || b == null || c == null )
+			throw new NullPointerException ( "Neither a, nor b, nor c may be null" );
+		
 		Line ab = LineBuilder.between ( a, b );
 		Line bc = LineBuilder.between ( b, c );
 		
@@ -60,6 +66,9 @@ public class CircleBuilder
 	 */
 	public static Circle inscribedCircle ( Point a, Point b, Point c )
 	{
+		if ( a == null || b == null || c == null )
+			throw new NullPointerException ( "Neither a, nor b, nor c may be null" );
+		
 		double lenA = b.distanceTo ( c );
 		double lenB = a.distanceTo ( c );
 		double lenC = a.distanceTo ( b );

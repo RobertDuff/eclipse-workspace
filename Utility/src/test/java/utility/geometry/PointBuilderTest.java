@@ -115,8 +115,51 @@ public class PointBuilderTest
 		c = PointBuilder.onCircle ( a, Math.PI / 4 );
 		assertEquals ( 5 / Math.sqrt ( 2 ), c.x(), TOLERANCE );
 		assertEquals ( 5 / Math.sqrt ( 2 ), c.y(), TOLERANCE );
-		
-		
 	}
 
+	@Test
+	public void testOffset()
+	{
+		Point a;
+		Point b;
+		
+		a = new Point ( 0, 0 );
+		b = PointBuilder.offset ( a, 3, -4 );
+		assertEquals (  3, b.x (), TOLERANCE );
+		assertEquals ( -4, b.y (), TOLERANCE );
+		
+		a = new Point( -8, 14 );
+		b = PointBuilder.offset ( a, 8, -14 );
+		assertEquals ( 0, b.x (), TOLERANCE );
+		assertEquals ( 0, b.y (), TOLERANCE );
+	}
+	
+	@Test
+	public void testPolarOffset()
+	{
+		Point a;
+		Point b;
+		
+		a = new Point ( 0, 0 );
+		
+		b = PointBuilder.polarOffset ( a, 0, 2 );
+		assertEquals ( 2, b.x (), TOLERANCE );
+		assertEquals ( 0, b.y (), TOLERANCE );
+		
+		b = PointBuilder.polarOffset ( a, Math.PI / 2, 2 );
+		assertEquals ( 0, b.x (), TOLERANCE );
+		assertEquals ( 2, b.y (), TOLERANCE );
+		
+		b = PointBuilder.polarOffset ( a, Math.PI, 2 );
+		assertEquals ( -2, b.x (), TOLERANCE );
+		assertEquals (  0, b.y (), TOLERANCE );
+		
+		b = PointBuilder.polarOffset ( a, Math.PI * 1.5, 2 );
+		assertEquals (  0, b.x (), TOLERANCE );
+		assertEquals ( -2, b.y (), TOLERANCE );
+		
+		b = PointBuilder.polarOffset ( a, Math.PI / 3, 5 );
+		assertEquals ( 2.5,            b.x (), TOLERANCE );
+		assertEquals ( 4.330127018922, b.y (), TOLERANCE );
+	}
 }

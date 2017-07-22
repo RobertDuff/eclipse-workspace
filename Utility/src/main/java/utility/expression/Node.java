@@ -219,7 +219,7 @@ public class Node
 
 	/**
 	 * Sets the Argument for a Function.
-	 * @param a
+	 * @param a The argument {@code Node}
 	 */
 	public void setArg ( Node a )
 	{
@@ -228,6 +228,7 @@ public class Node
 
 	/**
 	 * Set The Left Operand for a Binary Operator
+	 * @param l The left operand {@code Node}
 	 */
 	public void setLeft ( Node l )
 	{
@@ -236,6 +237,7 @@ public class Node
 
 	/**
 	 * Set The Right Operand for a Binary Operator
+	 * @param r The right operand {@code Node}
 	 */
 	public void setRight ( Node r )
 	{
@@ -244,6 +246,7 @@ public class Node
 
 	/**
 	 * Determines is a Node is Reducable.
+	 * @return TRUE if the node is reducable.
 	 */
 	public boolean reducable()
 	{

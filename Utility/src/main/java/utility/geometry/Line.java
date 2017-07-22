@@ -194,6 +194,9 @@ public class Line
 	 */
 	public Line ( Line line )
 	{
+		if ( line == null )
+			throw new NullPointerException ( "Line cannot be null" );
+		
 		theta = line.theta;
 		slope = line.slope;
 		xIntercept = line.xIntercept;

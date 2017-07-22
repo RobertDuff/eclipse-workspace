@@ -55,6 +55,9 @@ public class LineBuilder
 	 */
 	public static Line between ( Point a, Point b )
 	{
+		if ( a == null || b == null )
+			throw new NullPointerException ( "Neither a nor b may be null" );
+		
 		if ( a.x() == b.x() && a.y() == b.y() )
 			throw new IllegalArgumentException ( "The Two Points represent the Same Point." );
 		
@@ -98,6 +101,9 @@ public class LineBuilder
 	 */
 	public static Line thetaThruPoint ( double theta, Point point )
 	{
+		if ( point == null )
+			throw new NullPointerException ( "Point may not be null" );
+		
 		if ( Line.isThetaVertical ( theta ) )
 			return vertical ( point.x() );
 		
@@ -114,6 +120,9 @@ public class LineBuilder
 	 */
 	public static Line slopeThruPoint ( double slope, Point point )
 	{
+		if ( point == null )
+			throw new NullPointerException ( "Point may not be null" );
+		
 		return thetaThruPoint ( Line.theta ( slope ), point );
 	}
 	
@@ -126,6 +135,12 @@ public class LineBuilder
 	 */
 	public static Line parallelThruPoint ( Line referenceLine, Point point )
 	{
+		if ( point == null )
+			throw new NullPointerException ( "Point may not be null" );
+		
+		if ( referenceLine == null )
+			throw new NullPointerException ( "Line may not be null" );
+		
 		return thetaThruPoint ( referenceLine.theta(), point );
 	}
 	
@@ -138,6 +153,12 @@ public class LineBuilder
 	 */
 	public static Line perpendicularThruPoint ( Line referenceLine, Point point )
 	{
+		if ( point == null )
+			throw new NullPointerException ( "Point may not be null" );
+		
+		if ( referenceLine == null )
+			throw new NullPointerException ( "Line may not be null" );
+		
 		if ( referenceLine.isHorizontal() )
 			return vertical ( point.x() );
 		

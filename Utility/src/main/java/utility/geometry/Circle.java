@@ -39,6 +39,9 @@ public class Circle
 	 */
 	public Circle ( Point center, double radius )
 	{
+		if ( center == null )
+			throw new NullPointerException ( "Center point cannot be null" );
+		
 		if ( radius <= 0 )
 			throw new IllegalArgumentException ( "Radius must be Greater Than Zero" );
 		
@@ -53,6 +56,9 @@ public class Circle
 	 */
 	public Circle ( Circle circle )
 	{
+		if ( circle == null )
+			throw new NullPointerException ( "Circle cannot be null" );
+		
 		center = new Point ( circle.center );
 		radius = circle.radius;
 	}
@@ -74,5 +80,21 @@ public class Circle
 	public double radius()
 	{
 		return radius;
+	}
+	
+	/**
+	 * @return The circumference of the Circle.
+	 */
+	public double circumference()
+	{
+		return 2 * Math.PI * radius;
+	}
+	
+	/**
+	 * @return The area of the Circle.
+	 */
+	public double area()
+	{
+		return Math.PI * radius * radius;
 	}
 }

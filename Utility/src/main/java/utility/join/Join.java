@@ -272,10 +272,10 @@ public class Join
 	}
 
 	/**
-	 * Creates a string from an <code>Object</code> array.<p>
+	 * Creates a string from an <code>Object</code> array.
 	 * <p>
 	 * This method uses <code>Object.toString()</code> to format each value.
-	 * 
+	 * </p>
 	 * @param delimiter A <code>String</code> to separate the individual values.
 	 * @param collection An <code>Object</code> array.
 	 * @return A <code>String</code> constructed of the values in <code>collection</code>, separated by <code>delimiter</code>.
@@ -288,10 +288,10 @@ public class Join
 	}
 
 	/**
-	 * Creates a string from an <code>Object</code> array.<p>
+	 * Creates a string from an <code>Object</code> array.
 	 * <p>
 	 * This method uses a <code>Format</code> to format each value.
-	 * 
+	 * </p>
 	 * @param delimiter A <code>String</code> to separate the individual values.
 	 * @param format A <code>Format</code> used to format the values in the array.
 	 * @param collection An <code>Object</code> array.
@@ -308,7 +308,7 @@ public class Join
 	 * Creates a string from an <code>Iterable</code> collection of values of type <code>Object</code>.
 	 * <p>
 	 * This method uses <code>Object.toString()</code> to format each value.
-	 * 
+	 * </p>
 	 * @param delimiter A <code>String</code> to separate the individual values.
 	 * @param iterable A collection implementing <code>Iterable</code>.
 	 * @return A <code>String</code> constructed of the values in <code>iterable</code>, separated by <code>delimiter</code>.

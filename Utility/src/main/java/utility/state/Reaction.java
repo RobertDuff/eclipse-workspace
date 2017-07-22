@@ -25,7 +25,7 @@ public class Reaction
     protected Function<Event,List<Event>> action;
     
     /**
-     * Construct a {@code Reaction} with no {@link Guard}, {@link Action}, or destination {@link State}.
+     * Construct a {@code Reaction} with no guard, action, or destination {@link State}.
      */
     public Reaction()
     {
@@ -33,8 +33,8 @@ public class Reaction
     }
     
     /**
-     * Construct a {@code Reaction} with no {@link Guard} or destination {@link State}.
-     * @param action The {@link Action} to take during this {@code Reaction}.
+     * Construct a {@code Reaction} with no guard or destination {@link State}.
+     * @param action The {@link Function} object to invoke during this {@code Reaction}.
      */
     public Reaction ( Function<Event,List<Event>> action )
     {
@@ -42,7 +42,7 @@ public class Reaction
     }
 
     /**
-     * Construct a {@code Reaction} with no {@link Guard} or {@link Action}.
+     * Construct a {@code Reaction} with no guard or action.
      * @param destination The {@link State} to which to transition after this {@code Reaction}.
      */
     public Reaction ( State destination )
@@ -51,8 +51,8 @@ public class Reaction
     }
     
     /**
-     * Construct a {@code Reaction} with no {@link Guard}.
-     * @param action The {@link Action} to take during this {@code Reaction}.
+     * Construct a {@code Reaction} with no guard.
+     * @param action The {@link Function} object to invoke during this {@code Reaction}.
      * @param destination The {@link State} to which to transition after this {@code Reaction}.
      */
     public Reaction ( Function<Event,List<Event>> action, State destination  )
@@ -62,8 +62,8 @@ public class Reaction
     
     /**
      * Construct a {@code Reaction} with no destination {@link State}.
-     * @param guard A {@link Guard} object which will determine if the {@code Reaction} is allowed to proceed.
-     * @param action The {@link Action} to take during this {@code Reaction}.
+     * @param guard A guard {@link Predicate} object which will determine if the {@code Reaction} is allowed to proceed.
+     * @param action The {@link Function} object to invoke during this {@code Reaction}.
      */
     public Reaction ( Predicate<Event> guard, Function<Event,List<Event>> action )
     {
@@ -71,8 +71,8 @@ public class Reaction
     }
     
     /**
-     * Construct a {@code Reaction} with no {@link Action}.
-     * @param guard A {@link Guard} object which will determine if the {@code Reaction} is allowed to proceed.
+     * Construct a {@code Reaction} with no action.
+     * @param guard A guard {@link Predicate} object which will determine if the {@code Reaction} is allowed to proceed.
      * @param destination The {@link State} to which to transition after this {@code Reaction}.
      */
     public Reaction ( Predicate<Event> guard, State destination   )
@@ -82,8 +82,8 @@ public class Reaction
     
     /**
      * Construct a {@code Reaction}.
-     * @param guard A {@link Guard} object which will determine if the {@code Reaction} is allowed to proceed.
-     * @param action The {@link Action} to take during this {@code Reaction}.
+     * @param guard A guard {@link Predicate} object which will determine if the {@code Reaction} is allowed to proceed.
+     * @param action The {@link Function} object to invoke during this {@code Reaction}.
      * @param destination The {@link State} to which to transition after this {@code Reaction}.
      */
     public Reaction ( Predicate<Event> guard, Function<Event,List<Event>> action, State destination   )
@@ -94,7 +94,7 @@ public class Reaction
     }
     
     /**
-     * @param guard A {@link Guard} object which will determine if the {@code Reaction} is allowed to proceed.
+     * @param guard A {@link Predicate} object which will determine if the {@code Reaction} is allowed to proceed.
      */
     public final void setGuard ( Predicate<Event> guard )
     {
@@ -102,7 +102,7 @@ public class Reaction
     }
 
     /**
-     * @param action The {@link Action} to take during this {@code Reaction}.
+     * @param action The {@link Function} object to invoke during this {@code Reaction}.
      */
     public final void setAction ( Function<Event,List<Event>> action )
     {

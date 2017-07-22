@@ -77,4 +77,14 @@ public class PointBuilder
 		
 		return new Point ( x, y );
 	}
+	
+	public static Point offset ( Point point, double x, double y )
+	{
+		return new Point ( point.x () + x, point.y () + y );
+	}
+	
+	public static Point polarOffset ( Point point, double theta, double radius )
+	{
+		return new Point ( point.x () + Math.cos ( theta ) * radius, point.y () + Math.sin ( theta ) * radius );
+	}
 }

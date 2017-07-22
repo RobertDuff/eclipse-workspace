@@ -9,17 +9,20 @@ import javafx.beans.property.SimpleObjectProperty;
 
 /**
  * A Generic Communication Protocol Stack
- * <p/>
+ * <p>
  * A {@code Protocol} consists of a Data Transmission Chain (TX Chain) and a
  * Data Receive Chain (RX Chain).
- * <p/>
+ * </p>
+ * <p>
  * The TX chain consists of a sequence of {@link Function}s, each of which
  * is responsible for a step in the data transformation/transmission process.
  * The final {@code Function} in the TX chain is responsible for completing
  * the data transformation/transmission process.
- * <p/>
+ * </p>
+ * <p>
  * The RX chain consists of a sequence of {@code Function}s, (most often
  * the inverse operations as those in the TX chain, and in reverse order).
+ * </p>
  * 
  * @author Rob
  *
@@ -106,7 +109,7 @@ public class Protocol
 	/**
 	 * Sends Data via the TX chain.
 	 * @param data The data to transmit/process.
-	 * @throws Exception
+	 * @throws Exception Allows throw of application exceptions.
 	 */
 	public synchronized void sendAsync ( Object data ) throws Exception
 	{
@@ -119,7 +122,7 @@ public class Protocol
 	 * Sends Data via the TX chain, and then wait's for a response.
 	 * @param data The data to transmit/process
 	 * @return The response.
-	 * @throws Exception
+	 * @throws Exception Allows throw of application exceptions.
 	 */
 	public synchronized Object send ( Object data ) throws Exception
 	{
